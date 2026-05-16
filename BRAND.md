@@ -36,3 +36,39 @@ no chibi mascot styling.
 - Generated background is near-white; remove background before exporting
   favicon variants (16, 32, 180, 192, 512, plus SVG if possible).
 - Keep the deep-aubergine outline visible on light browser tab themes.
+
+## OpenGraph Image — "Gallery Poster" (v1)
+
+Direction: make `MRT` the hero. The blob/gradient language should support
+the typography as abstract marks, not act as a mascot. Artsy, restrained,
+less cartoon, no space/nebula background.
+
+### Prompt
+
+Create a 1200x630 OpenGraph image for MRT, a personal umbrella site for
+experimental software projects. Make it feel like a contemporary gallery
+poster, not a startup banner. Do not include quotation marks. The only
+readable text should be MRT.
+
+Place large custom lettering reading MRT slightly left of center. MR should
+be dark aubergine, and T should be a saturated gradient of coral, magenta,
+violet, and cyan. Around the letters, add a few abstract gradient forms:
+soft irregular blobs, smears, and drips, like poured ink or translucent
+resin stains on paper. These forms should support the typography, not
+become cute characters. Use lots of negative space.
+
+Background: warm cream or pale gray paper, visible grain, faint scanner
+texture, subtle print imperfections. Style: editorial design, art book
+cover, risograph-inspired but polished, weird and tasteful. No mascot,
+no faces, no space, no nebula, no sparkles, no subtext, no UI elements,
+no childish cartoon styling.
+
+### Notes
+
+- Site metadata points to `https://mrt-company.com/assets/og-image.jpg`.
+- Source generation file in the repo is `assets/og_image.jpg`.
+- Optimized deployed file is `assets/og-image.jpg` at 1200x630.
+- If regenerating, keep the final asset at 1200x630 and preserve the
+  `og-image.jpg` filename unless the metadata in `index.html` changes too.
+- iMessage and other scrapers may cache previews by URL. Test updates with
+  a cache-busted URL such as `https://mrt-company.com/?v=2`.
