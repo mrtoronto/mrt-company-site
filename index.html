@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Mr.T — Matt Toronto's miscellaneous projects."
+    />
+    <meta name="theme-color" content="#0a0512" />
+    <title>Mr.T — MRT Company</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=Geist:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="bg" aria-hidden="true">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+      <div class="grain"></div>
+    </div>
+    <div class="cursor-glow" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <a class="wordmark" href="/" aria-label="mrt">
+        <span class="mr">mr</span><span class="t">t</span>
+      </a>
+    </header>
+
+    <main>
+      <h1 class="tagline">
+        A loose collection of projects from
+        <span class="who">Matt&nbsp;Toronto</span>.
+      </h1>
+
+      <ul class="projects" aria-label="Projects">
+        <li>
+          <a class="tile tile-corpo" href="https://corpotism.com" target="_blank" rel="noreferrer">
+            <span class="tile-eye">/01</span>
+            <span class="tile-logo" aria-hidden="true">
+              <img src="./assets/corpotism-icon.svg" alt="" loading="lazy" />
+            </span>
+            <span class="tile-name">Corpotism</span>
+            <span class="tile-line">Work support for autistic people.</span>
+            <span class="tile-go">corpotism.com <em>→</em></span>
+          </a>
+        </li>
+        <li>
+          <a class="tile tile-zak" href="https://zakaya.io" target="_blank" rel="noreferrer">
+            <span class="tile-eye">/02</span>
+            <span class="tile-logo" aria-hidden="true">
+              <img src="./assets/zakaya-favicon.ico" alt="" loading="lazy" />
+            </span>
+            <span class="tile-name">Zakaya</span>
+            <span class="tile-line">Walk in already knowing someone.</span>
+            <span class="tile-go">zakaya.io <em>→</em></span>
+          </a>
+        </li>
+      </ul>
+
+      <p class="more">
+        More cooking on
+        <a href="https://github.com/mrtoronto" target="_blank" rel="noreferrer">github</a>.
+        <span>↩</span>
+      </p>
+    </main>
+
+    <script>
+      (() => {
+        const root = document.documentElement;
+        let tx = window.innerWidth / 2;
+        let ty = window.innerHeight / 2;
+        let cx = tx;
+        let cy = ty;
+
+        const onMove = (e) => {
+          const p = e.touches ? e.touches[0] : e;
+          tx = p.clientX;
+          ty = p.clientY;
+        };
+        window.addEventListener("pointermove", onMove, { passive: true });
+        window.addEventListener("touchmove", onMove, { passive: true });
+
+        const tick = () => {
+          cx += (tx - cx) * 0.12;
+          cy += (ty - cy) * 0.12;
+          root.style.setProperty("--mx", cx + "px");
+          root.style.setProperty("--my", cy + "px");
+          requestAnimationFrame(tick);
+        };
+        tick();
+      })();
+    </script>
+  </body>
+</html>
