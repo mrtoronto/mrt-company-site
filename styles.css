@@ -281,6 +281,11 @@ main {
   --logo-hover: translate(6px, -4px) rotate(6deg);
 }
 
+.tile-job {
+  --tile-grad: linear-gradient(135deg, #f2ff8f 0%, #c6ff5b 42%, #4ad6ff 100%);
+  --logo-hover: translate(-3px, -6px) rotate(4deg);
+}
+
 .tile-logo {
   position: absolute;
   top: 22px;
@@ -342,6 +347,12 @@ main {
   max-width: 28ch;
   opacity: 0.78;
   margin-top: auto;
+}
+
+.tile-note {
+  display: block;
+  margin-top: 8px;
+  font-weight: 700;
 }
 
 .tile-go {
